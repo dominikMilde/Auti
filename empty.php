@@ -1,3 +1,4 @@
+<?php require('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,6 +78,6 @@
         <!-- /footer content -->
       </div>
     </div>
-	
+    <?php require('js.php'); ?>
   </body>
 </html>
