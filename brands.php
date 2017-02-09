@@ -65,24 +65,28 @@
 
                     <?php
                         $sql = "SELECT id, name, year_est from brands;";
+                        $result = $mysqli->query($sql);
                     ?>
 
                      <table class="table">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>Name</th>
+                          <th>Year established</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
+                        <?php
+                            while ($brand = $result->fetch_assoc()){
+                                echo('<tr>');
+                                echo('<th scope="row">'. $brand['id']. '</th>');
+                                echo('<td>' . $brand['name']. '</td>');
+                                echo('<td>' . $brand['year_est']. '</td>');
+                                echo('</tr>');
+                            }
+                        ?>
+
                       </tbody>
                     </table>
                    
