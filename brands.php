@@ -74,6 +74,7 @@
                           <th>#</th>
                           <th>Name</th>
                           <th>Year established</th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -83,6 +84,7 @@
                                 echo('<th scope="row">'. $brand['id']. '</th>');
                                 echo('<td>' . $brand['name']. '</td>');
                                 echo('<td>' . $brand['year_est']. '</td>');
+                                echo('<td> <a href = "brands_edit.php?id= ' . $brand['id'] . '"> <i class="fa fa-pencil" aria-hidden = "true"></i></a></td>');
                                 echo('</tr>');
                             }
                         ?>
