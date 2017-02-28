@@ -64,7 +64,7 @@
                     <h1>Auti</h1>
 
                     <?php
-                        $sql = "SELECT id, brand_id, model, color, mileage from cars ORDER BY id;";
+                        $sql = "SELECT cars.id, brands.name, cars.model, cars.color, cars.mileage from cars JOIN brands ON brands.id=cars.brand_id;";
                         $result = $mysqli->query($sql);
                     ?>
 
@@ -85,7 +85,7 @@
                             while ($brand = $result->fetch_assoc()){
                                 echo('<tr>');
                                 echo('<th scope="row">'. $brand['id']. '</th>');
-                                echo('<td>' . $brand['brand_id']. '</td>');
+                                echo('<td>' . $brand['name']. '</td>');
                                 echo('<td>' . $brand['model']. '</td>');
                                 echo('<td>' . $brand['color']. '</td>');
                                 echo('<td>' . $brand['mileage']. '</td>');
