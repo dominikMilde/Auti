@@ -89,8 +89,8 @@
                                 echo('<td>' . $brand['model']. '</td>');
                                 echo('<td>' . $brand['color']. '</td>');
                                 echo('<td>' . $brand['mileage']. '</td>');
-                                echo('<td> <a href = "brands_edit.php?id= ' . $brand['id'] . '"> <i class="fa fa-pencil" aria-hidden = "true"></i></a></td>');
-                                echo('<td> <a href = "brands_delete.php?id= ' . $brand['id'] . '"> <i class="fa fa-trash" aria-hidden = "true"></i></a></td>');
+                                echo('<td> <a href = "cars_edit.php?id= ' . $brand['id'] . '"> <i class="fa fa-pencil" aria-hidden = "true"></i></a></td>');
+                                echo('<td> <a href = "cars_delete.php?id= ' . $brand['id'] . '"> <i class="fa fa-trash" aria-hidden = "true"></i></a></td>');
                                 echo('</tr>');
                             }
                         ?>
