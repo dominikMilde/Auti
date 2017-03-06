@@ -69,7 +69,7 @@
                         <?php $sql = "SELECT id, name from brands ORDER BY name;";
                         $result = $mysqli->query($sql);
                         ?>
-                        <select>
+                        <select name = "brand_id">
                         <?php
                         while ($brand = $result->fetch_assoc()){
                                 echo('<option value = "' . $brand['id'].'">'.$brand['name'].' </option>');
@@ -80,16 +80,23 @@
                     </div>
 
                     <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="model">Datum osnutka:</label>
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="model">Model</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" id="model" name="model" required="required" class="form-control col-md-7 col-xs-12">
                     </div>
                     </div>
 
                     <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="color">Datum osnutka:</label>
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="color">Boja</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" id="color" name="color" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mileage">Mileage</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="mileage" name="mileage" required="required" class="form-control col-md-7 col-xs-12">
                     </div>
                     </div>
 
