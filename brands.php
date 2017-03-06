@@ -85,8 +85,8 @@
                                 echo('<th scope="row">'. $brand['id']. '</th>');
                                 echo('<td>' . $brand['name']. '</td>');
                                 echo('<td>' . $brand['year_est']. '</td>');
-                                echo('<td> <a href = "brands_edit.php?id= ' . $brand['id'] . '"> <i class="fa fa-pencil" aria-hidden = "true"></i></a></td>');
-                                echo('<td> <a href = "brands_delete.php?id= ' . $brand['id'] . '"> <i class="fa fa-trash" aria-hidden = "true"></i></a></td>');
+                                echo('<td> <a href = "brands_edit.php?id=' . $brand['id'] . '"> <i class="fa fa-pencil" aria-hidden = "true"></i></a></td>');
+                                echo('<td> <a href = "brands_delete.php?id=' . $brand['id'] . '"> <i class="fa fa-trash" aria-hidden = "true"></i></a></td>');
                                 echo('</tr>');
                             }
                         ?>
