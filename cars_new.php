@@ -72,7 +72,7 @@
                         <select name = "brand_id">
                         <?php
                         while ($brand = $result->fetch_assoc()){
-                                echo('<option value = "' . $brand['id'].'">'.$brand['name'].' </option>');
+                                echo('<option value = "' . $brand['id'].'"selected = "selected">'.$brand['name'].' </option>');
                             }
                         ?>
                         </select>
