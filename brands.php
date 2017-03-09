@@ -67,6 +67,7 @@
                   <?php
                         $sql = "SELECT id, name, year_est FROM brands ORDER BY name;";
                         $result = $mysqli->query($sql);
+                        //$_SESSION["tekst"] = 'ovo je tekst u sessionu';
                         echo('Session $_SESSION[tekst]:' . $_SESSION['tekst']);
 
                   ?>
