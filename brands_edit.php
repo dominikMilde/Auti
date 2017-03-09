@@ -74,6 +74,7 @@
 
                   <form action="brands_update.php" method="post" class="form-horizontal form-label-left">
                     <input type="hidden" name="id" value="<?php echo($brand['id']); ?>">
+                    
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Ime proizvođača:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
