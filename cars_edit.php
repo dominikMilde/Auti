@@ -67,38 +67,51 @@
             
                  $sql = "SELECT id, brand_id, model, color, mileage FROM cars WHERE id=" . $_GET['id'];
                  $result = $mysqli->query($sql);
-                 $brand = $result->fetch_assoc();
+                 $car = $result->fetch_assoc();
 
                  ?>
                  
                   <form action="cars_update.php" method="post" class="form-horizontal form-label-left">
-                    <input type="hidden" name="id" value="<?php echo($brand['id']); ?>">
+                    <input type="hidden" name="id" value="<?php echo($car['id']); ?>">
                     
                     <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">brand_id:</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="brand_id" name="brand_id" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['brand_id']); ?>">
-                    </div>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="brand_id">Ime proizvođača:</label>
+                        <?php $sql = "SELECT id, name from brands ORDER BY name;";
+                        $result = $mysqli->query($sql);
+                        ?>
+                        <select name = "brand_id">
+                        <?php
+                        while ($brand = $result->fetch_assoc()){
+                                if ($brand["id"] == $car["brand_id"]){
+                                  echo('<option value = "' . $brand['id'].'" selected = "selected">'.$brand['name'].' </option>');
+                                }
+                                else{
+                                  echo('<option value = "' . $brand['id'].'">'.$brand['name'].' </option>');
+                                }
+                            }
+                        ?>
+                        </select>
+                    
                     </div>
 
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Model:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="model" name="model" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['model']); ?>">
+                    <input type="text" id="model" name="model" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($car['model']); ?>">
                     </div>
                     </div>
 
                     <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="year_est">Boja:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="color" name="color" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['color']); ?>">
+                    <input type="text" id="color" name="color" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($car['color']); ?>">
                     </div>
                     </div>
 
                     <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="year_est">Kilometraža:</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                    <input type="text" id="mileage" name="mileage" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($brand['mileage']); ?>">
+                    <input type="text" id="mileage" name="mileage" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo($car['mileage']); ?>">
                     </div>
                     </div>
 
