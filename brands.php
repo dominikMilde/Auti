@@ -59,7 +59,8 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+
                 <div class="x_panel">
                   <div class="x_content">
                   <h1>Proizvođači</h1>
