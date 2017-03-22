@@ -1,4 +1,5 @@
 <?php require('sesije.php'); ?>
+<?php require('auth.php'); ?>
 <?php require('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
