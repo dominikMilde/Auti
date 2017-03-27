@@ -11,7 +11,7 @@ $result = $mysqli->query($sql);
         <ul>
         <?php
             while($car = $result->fetch_assoc()){
-                echo('<li>' . $car['name']. ' / ' . $car['model'] . ' / ' . $car['color'] . '</li>');
+                echo('<li> <a href = "proizvodaci.php?id=' . $car['id'] . '">' . $car['name'] . '</a> / ' . $car['model'] . ' / ' . $car['color'] . '</li>');
             }
         ?>
                 
