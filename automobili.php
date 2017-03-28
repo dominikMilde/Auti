@@ -1,5 +1,6 @@
 <?php require('connect.php'); 
-$sql = "SELECT cars.id, brands.name, cars.model, cars.color from cars, brands WHERE brands.id=cars.brand_id ORDER BY name, model;";
+//$sql = "SELECT cars.id, cars.brand_id, brands.name, cars.model, cars.color from cars, brands WHERE brands.id=cars.brand_id ORDER BY name, model;";
+$sql = "SELECT brands.id, brands.name from brands;";
 $result = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
@@ -7,14 +8,15 @@ $result = $mysqli->query($sql);
         <title> Automobili </title>
     </head>
     <body>
+
         <h1>Popis</h1>
-        <ul>
-        <?php
-            while($car = $result->fetch_assoc()){
-                echo('<li> <a href = "proizvodaci.php?id=' . $car['id'] . '">' . $car['name'] . '</a> / ' . $car['model'] . ' / ' . $car['color'] . '</li>');
-            }
-        ?>
-                
-        </ul>
+
+        <select name = 'id'>
+            <?php
+            while ($brand = $result->fetch_assoc()){
+                 echo('<option value = "' . $brand['id'].'">' . $brand['name'] . ' </option>');
+                }
+            ?>
+        </select>
     </body>
 </html>
